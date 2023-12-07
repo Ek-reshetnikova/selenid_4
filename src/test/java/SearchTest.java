@@ -22,11 +22,11 @@ public class SearchTest {
 
             //Откройте страницу Selenide в Github
             open("/selenide/selenide");
-
             //Перейдите в раздел Wiki проекта
             $("#wiki-tab").click();
-            //Убедитесь, что в списке страниц (Pages) есть страница SoftAssertions, Откройте страницу SoftAssertions, проверьте что внутри есть пример кода для JUnit5
+            //Убедитесь, что в списке страниц есть страница (Pages) SoftAssertions.
             $("#wiki-pages-filter").setValue("SoftAssertions").pressEnter();
+            //Откройте страницу SoftAssertions, проверьте что внутри есть пример кода для JUnit5
             $("a[href='/selenide/selenide/wiki/SoftAssertions']").click();
             $(".gh-header-title").shouldHave(text("SoftAssertions"));
             $("#wiki-body").shouldHave(text("@ExtendWith({SoftAssertsExtension.class})\n" +
